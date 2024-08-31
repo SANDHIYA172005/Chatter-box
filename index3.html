@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400&family=Finger+Paint&display=swap">
+</head>
+<body>
+    <nav class="navbar">
+        <button class="dboardBtn">Dashboard</button>
+        <img class="navBG" src="navbar.png" alt="">
+        <div class="navCenter">
+            <img class="logo" src="logo_bgr.png" alt="logo">
+            <h1>PlanIt</h1>
+        </div>
+          
+    </nav>
+    <!-- <h1 class="travelItinerary">Our Travel Itinerary</h1> -->
+    
+    <div class="card">
+        <div id="header">
+          <h1>Chat Room</h1>
+          <a href="#poll"><ion-icon class="pollIcon" name="stats-chart-outline"></ion-icon></a>
+        </div>
+        <div id="message-section">
+          <div class="message" id="bot"><span id="bot-response">Hello..</span></div>
+        </div>
+        <div id="input-section">
+          <input id="input" type="text" placeholder="Type a message" autocomplete="off" autofocus="autofocus"/>
+          <button class="send" onclick="sendMessage()">
+            <div class="circle"><i class="zmdi zmdi-mail-send"></i></div>
+          </button>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="travelList">My Travel List</h1>
+        <form id="travelForm">
+            <input type="text" id="destinationInput" placeholder="Enter destination...">
+            <button type="submit">Add Destination</button>
+        </form>
+        <ul id="destinationList">
+            <!-- List of destinations will be added here dynamically -->
+        </ul>
+    </div>
+    <!-- <div class="container">
+        
+        <div class="image-wrapper">
+          <h2>Departure</h2>
+          <div class="line"></div>
+        </div>
+        <div class="image-wrapper">
+          <img src="https://images.collegedunia.com/public/college_data/images/campusimage/14193486382.PNG" alt="Image 1">
+          <div class="line"></div>
+          <p>Starting from College</p>
+          <input type="time">
+        </div>
+        <div class="image-wrapper">
+          <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/95968451.jpg?k=261648a4c72b38bf41575b2464ccb479ffc75dc46f98a050891d1eba66582456&o=&hp=1" alt="Image 2">
+          <div class="line"></div>
+          <p>Breakfast</p>
+          <input type="time">
+        </div>
+        <div class="image-wrapper">
+          <img src="https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202108261833334775-5605620a2b2e11ec90990a58a9feac02.jpg" alt="Image 3">
+          <div class="line"></div>
+          <p>Checking In @Rooms</p>
+          <input type="time">
+        </div>
+        <div class="image-wrapper">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Mysore_Palace_Morning.jpg" alt="Image 4">
+          <p>Visiting Mysore Palace</p>
+          <input type="time">
+        </div>
+      </div> -->
+
+
+      <div id="poll" class="containerPoll">
+        <a href="#"><ion-icon class="backButton" name="close-circle-outline"></ion-icon></a>
+        <div class="wrapper">
+            <header>Input your choice</header>
+            <div class="poll-area">
+              <input type="checkbox" name="poll" id="opt-1">
+              <input type="checkbox" name="poll" id="opt-2">
+              <input type="checkbox" name="poll" id="opt-3">
+              <input type="checkbox" name="poll" id="opt-4">
+              <label for="opt-1" class="opt-1">
+                <div class="row">
+                  <div class="column">
+                    <span class="circle"></span>
+                    <span class="text">Place 1</span>
+                  </div>
+                  <span class="percent">30%</span>
+                </div>
+                <div class="progress" style='--w:30;'></div>
+              </label>
+              <label for="opt-2" class="opt-2">
+                <div class="row">
+                  <div class="column">
+                    <span class="circle"></span>
+                    <span class="text">Place 2</span>
+                  </div>
+                  <span class="percent">20%</span>
+                </div>
+                <div class="progress" style='--w:20;'></div>
+              </label>
+              <label for="opt-3" class="opt-3">
+                <div class="row">
+                  <div class="column">
+                    <span class="circle"></span>
+                    <span class="text">Place 3</span>
+                  </div>
+                  <span class="percent">40%</span>
+                </div>
+                <div class="progress" style='--w:40;'></div>
+              </label>
+              <label for="opt-4" class="opt-4">
+                <div class="row">
+                  <div class="column">
+                    <span class="circle"></span>
+                    <span class="text">Place 4</span>
+                  </div>
+                  <span class="percent">10%</span>
+                </div>
+                <div class="progress" style='--w:10;'></div>
+              </label>
+            </div>
+          </div>
+      </div>
+      <div class="hotelContainer">
+        <h1>Hotel Search</h1><br>
+  
+        <form id="searchForm">
+            <!-- <label for="location">Location:</label> -->
+            <input type="text" id="location" name="location" placeholder="Enter Location..." required>
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="hotelList"></div>
+
+      </div>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <script>
+        const userMessage = [];
+    const botReply = [];
+    
+    const alternative = [];
+    
+    const synth = window.speechSynthesis;
+    
+    
+    function sendMessage() {
+      const inputField = document.getElementById("input");
+      let input = inputField.value.trim();
+      input != "" && output(input);
+      inputField.value = "";
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      const inputField = document.getElementById("input");
+      inputField.addEventListener("keydown", function (e) {
+        if (e.code === "Enter") {
+          let input = inputField.value.trim();
+          input != "" && output(input);
+          inputField.value = "";
+        }
+      });
+    });
+    
+    function output(input) {
+      let product;
+    
+      let text = input.toLowerCase().replace(/[^\w\s\d]/gi, "");
+    
+      text = text
+        .replace(/[\W_]/g, " ")
+        .replace(/ a /g, " ")
+        .replace(/i feel /g, "")
+        .replace(/whats/g, "what is")
+        .replace(/please /g, "")
+        .replace(/ please/g, "")
+        .trim();
+    
+      let comparedText = compare(userMessage, botReply, text);
+    
+      product = comparedText
+        ? comparedText
+        : alternative[Math.floor(Math.random() * alternative.length)];
+      addChat(input, product);
+    }
+    
+    function compare(triggerArray, replyArray, string) {
+      let item;
+      for (let x = 0; x < triggerArray.length; x++) {
+        for (let y = 0; y < replyArray.length; y++) {
+          if (triggerArray[x][y] == string) {
+            items = replyArray[x];
+            item = items[Math.floor(Math.random() * items.length)];
+          }
+        }
+      }
+      //containMessageCheck(string);
+      if (item) return item;
+      else return containMessageCheck(string);
+    }
+    
+    function containMessageCheck(string) {
+      let expectedReply = [];
+      let expectedMessage = [];
+      let item;
+      for (let x = 0; x < expectedMessage.length; x++) {
+        if (expectedMessage[x].includes(string)) {
+          items = expectedReply[x];
+          item = items[Math.floor(Math.random() * items.length)];
+        }
+      }
+      return item;
+    }
+    function addChat(input, product) {
+      const mainDiv = document.getElementById("message-section");
+      let userDiv = document.createElement("div");
+      userDiv.id = "user";
+      userDiv.classList.add("message");
+      userDiv.innerHTML = `<span id="user-response">${input}</span>`;
+      mainDiv.appendChild(userDiv);
+    
+    //   let botDiv = document.createElement("div");
+    //   botDiv.id = "bot";
+    //   botDiv.classList.add("message");
+    //   botDiv.innerHTML = `<span id="bot-response">${product}</span>`;
+    //   mainDiv.appendChild(botDiv);
+      var scroll = document.getElementById("message-section");
+      scroll.scrollTop = scroll.scrollHeight;
+    }
+    document.getElementById('travelForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var destinationInput = document.getElementById('destinationInput');
+    var destination = destinationInput.value;
+    if (destination.trim() !== '') {
+        addDestination(destination);
+        destinationInput.value = '';
+    } else {
+        alert('Please enter a destination.');
+    }
+});
+
+function addDestination(destination) {
+    var destinationList = document.getElementById('destinationList');
+    var li = document.createElement('li');
+    li.textContent = destination;
+    destinationList.appendChild(li);
+}
+const options = document.querySelectorAll("label");
+for (let i = 0; i < options.length; i++) {
+  options[i].addEventListener("click", ()=>{
+    for (let j = 0; j < options.length; j++) {
+      if(options[j].classList.contains("selected")){
+        options[j].classList.remove("selected");
+      }
+    }
+
+    options[i].classList.add("selected");
+    for (let k = 0; k < options.length; k++) {
+      options[k].classList.add("selectall");
+    }
+
+    let forVal = options[i].getAttribute("for");
+    let selectInput = document.querySelector("#"+forVal);
+    let getAtt = selectInput.getAttribute("type");
+    if(getAtt == "checkbox"){
+      selectInput.setAttribute("type", "radio");
+    }else if(selectInput.checked == true){
+      options[i].classList.remove("selected");
+      selectInput.setAttribute("type", "checkbox");
+    }
+
+    let array = [];
+    for (let l = 0; l < options.length; l++) {
+      if(options[l].classList.contains("selected")){
+        array.push(l);
+      }
+    }
+    if(array.length == 0){
+      for (let m = 0; m < options.length; m++) {
+        options[m].removeAttribute("class");
+      }
+    }
+  });
+}
+
+
+const apiKey = 'efc8283a73msh6ed0b81f4bec292p13a83ajsn82756bf4f2e1';
+
+    document.getElementById('searchForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const location = document.getElementById('location').value;
+      const url = "http://tripadvisor16.p.rapidapi.com";
+
+      try {
+        const response = await fetch(url, {
+          headers: {
+            'x-tripadvisor-api-key': apiKey,
+          },
+        });
+        console.log(response)
+        if (!response.ok) {
+          throw new Error('Failed to fetch hotels');
+        }
+
+        const data = await response.json();
+        console.log(data)
+        displayHotels(data);
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    });
+
+    function displayHotels(data) {
+      const hotelList = document.getElementById('hotelList');
+      hotelList.innerHTML = '';
+
+      data.forEach(hotel => {
+        const hotelItem = document.createElement('div');
+        hotelItem.classList.add('hotel-item');
+        hotelItem.innerHTML = `
+          <h3>${hotel.name}</h3>
+          <p>Rating: ${hotel.rating}</p>
+          <p>Location: ${hotel.location}</p>
+          <p>Price: ${hotel.price}</p>
+        `;
+        hotelList.appendChild(hotelItem);
+      });
+    }
+
+      </script>
+</body>
+</html>

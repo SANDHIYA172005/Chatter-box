@@ -1,0 +1,423 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ; */
+}
+body{
+    background-color: rgb(246, 246, 246);
+}
+.navbar{
+    position: relative;
+    width: 100%;
+    height: 14vh;
+    background-color: rgb(246, 246, 246);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.dboardBtn{
+    position: absolute;
+    z-index: 2;
+    top: 140%;
+    translate: 0 -50%;
+    right: 50px;
+    font-size: 15px;
+    border: none;
+    padding: 6px 15px 6px 15px;
+    border-radius: 5px;
+    background-color: rgb(255, 187, 0);
+    color: rgb(0, 0, 0);
+    -webkit-transition-duration: .4s;
+
+}
+.dboardBtn:hover{
+    cursor: pointer;
+    transition-duration: .4s;
+    background-color: rgb(205, 150, 0);
+
+}
+.navBG{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.navCenter{
+    color: rgb(255, 187, 0);
+    position: absolute;
+    width: 50%;
+    height: 14vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 30px;
+}
+.logo{
+    height: 100%;
+}
+.container {
+    position: absolute;
+    left: 60%;
+    width: 600px;
+    max-width: 600px;
+    top: 35%;
+    translate: -50% -50%;
+    gap: 40px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.travelList {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 20px;
+    background-color: rgb(255, 187, 0);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(197, 144, 0);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+ /* 
+.image-wrapper {
+    position: relative;
+}
+.image-wrapper img{
+    width: 150px;
+    height: 100px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0), 
+			0 10px 10px rgba(0, 0, 0, 0.19);
+}
+.line {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    height: 2px;
+    background-color: black;
+    transform: translateY(-50%);
+    width: 50px; Adjust as needed
+}
+
+.image-wrapper:last-child .line {
+    display: none; Hide the line after the last image
+}
+.travelItinerary{
+    position: absolute;
+    left: 50%;
+    top: 150px;
+    text-decoration: underline;
+} */
+* {
+    /* font-size: 1.3vw; */
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+  
+html {
+    --scrollbarBG: #fff;
+    --thumbBG: #90a4ae;
+}
+  
+.card {
+    height: 40vw;
+    width: 27vw;
+    background-color: rgba(255, 255, 255, 0.044);
+    /* margin-left: 30vw;
+    margin-top: 5vw; */
+    box-shadow: 2vw 2vw 12vw 3vw #ccc;
+    position: absolute;
+    
+}
+.card #header {
+    height: 3.5vw;
+    background: rgb(255,187,0);
+    padding: 0vw;
+    
+}
+.card #header h1 {
+    color: #060606;
+    font-size: 1.5vw;
+    padding: 1vw;
+}
+.pollIcon{
+    position: absolute;
+    font-size: 30px;
+    top: 18px;
+    right: 20px;
+    color: black;
+    
+}
+.pollIcon:hover{
+    cursor: pointer;
+}
+.pollIcon:focus ~.containerPoll{
+    display: contents;
+}
+.card #message-section::-webkit-scrollbar {
+    width: 10px;
+}
+.card #message-section {
+    height: 32vw;
+    padding: 0 2.5vw;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+.card #message-section::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+.card #message-section::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
+.card #message-section #bot,
+.card #message-section #user {
+    position: relative;
+    bottom: 0;
+    min-height: 1.5vw;
+    border: 0.15vw solid #2a2828;
+    background-color: #ffffff;
+    border-radius: 0px 1.5vw 1.5vw 1.8vw;
+    padding: 1vw;
+    margin: 1.5vw 0;
+}
+.card #message-section #user {
+    border: 1.5px solid black;
+    border-radius: 1.5vw 0vw 1.5vw 1.8vw;
+    background-color: rgb(255,187,0);
+    float: right;
+}
+.card #message-section #user #user-response {
+    color: black;
+}
+.card #message-section .message {
+    color: #000;
+    clear: both;
+    line-height: 1.2vw;
+    font-size: 1.2vw;
+    padding: 8px;
+    position: relative;
+    margin: 8px 0;
+    max-width: 85%;
+    word-wrap: break-word;
+    z-index: 2;
+}
+.card #input-section {
+    z-index: 1;
+    padding: 0 2.5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    overflow: hidden;
+    height: 3vw;
+    width: 110%;
+}
+.card #input-section input {
+    color: black;
+    padding-top: 40px;
+    min-width: 0.5vw;
+    outline: none;
+    height: 5vw;
+    width: 26vw;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #000 0.1vw;
+}
+.card .send {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin-left: 1.4vw;
+    margin-right: 20px;
+    padding: 0;
+    position: relative;
+    outline: none;
+    scale: 70%;
+}
+.card .send .circle {
+    position: relative;
+    width: 4.8vw;
+    height: 4.8vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card .send .circle i {
+    font-size: 3vw;
+    margin-left: -1vw;
+    margin-top: 1vw;
+}
+.containerPoll{
+    position: absolute;
+    right: 0;
+    backdrop-filter: blur(5px);
+    width: 1120px;
+    height: 625px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    
+}
+#poll:target{
+    display:flex;
+}
+/* body{
+    
+    min-height: 100vh;
+    background: #000000;
+  } */
+  ::selection{
+    color: #fff;
+    background: rgb(255, 187, 0);
+  }
+  .wrapper{
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    max-width: 380px;
+    width: 100%;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+  }
+  .wrapper header{
+    text-decoration: underline rgb(255, 187, 0);
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .wrapper .poll-area{
+    margin: 20px 0 15px 0;
+  }
+  .poll-area label{
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 8px 15px;
+    border: 2px solid #e6e6e6;
+    transition: all 0.2s ease;
+  }
+  .poll-area label:hover{
+    border-color: #ddd;
+  }
+  label.selected{
+    border-color: rgb(255, 187, 0)!important;
+  }
+  label .row{
+    display: flex;
+    pointer-events: none;
+    justify-content: space-between;
+  }
+  label .row .column{
+    display: flex;
+    align-items: center;
+  }
+  label .row .circle{
+    height: 19px;
+    width: 19px;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    position: relative;
+  }
+  label.selected .row .circle{
+    border-color: rgb(255, 187, 0);
+  }
+  label .row .circle::after{
+    content: "";
+    height: 11px;
+    width: 11px;
+    background: rgb(255, 187, 0);
+    border-radius: inherit;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    display: none;
+  }
+  .poll-area label:hover .row .circle::after{
+    display: block;
+    background: #e6e6e6;
+  }
+  label.selected .row .circle::after{
+    display: block;
+    background: rgb(255, 187, 0)!important;
+  }
+  label .row span{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  label .row .percent{
+    display: none;
+  }
+  label .progress{
+    height: 7px;
+    width: 100%;
+    position: relative;
+    background: #f0f0f0;
+    margin: 8px 0 3px 0;
+    border-radius: 30px;
+    display: none;
+    pointer-events: none;
+  }
+  label .progress:after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    background: #ccc;
+    width: calc(1% * var(--w));
+    border-radius: inherit;
+    transition: all 0.2s ease;
+  }
+  label.selected .progress::after{
+    background: rgb(255, 187, 0);
+  }
+  label.selectall .progress,
+  label.selectall .row .percent{
+    display: block;
+  }
+  input[type="radio"],
+  input[type="checkbox"]{
+    display: none;
+  }
+  .backButton{
+    position: absolute;
+    left: 68%;
+    top: 23%;
+    font-size: 33px;
+    color: rgb(255, 187, 0);
+  }
+.hotelContainer{
+    position: absolute;
+    left: 35%;
+    width: 50%;
+    top: 60%;
+    text-align: center;
+    z-index: -1;
+}

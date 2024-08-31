@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+}
+body{
+    background-color: rgb(246, 246, 246);
+}
+.navbar{
+    position: relative;
+    width: 100%;
+    height: 14vh;
+    background-color: rgb(246, 246, 246);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.navCenter{
+    color: rgb(255, 187, 0);
+    position: absolute;
+    width: 50%;
+    height: 14vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 30px;
+}
+.logo{
+    height: 100%;
+}
